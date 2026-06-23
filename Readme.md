@@ -1,80 +1,278 @@
+# 🛒 MERN E-Commerce Application
 
-# 🌱 Sustainify – Sustainable Shopping Platform
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  
-[![Node.js](https://img.shields.io/badge/Node.js-18.x-green)](https://nodejs.org/)  
-[![React](https://img.shields.io/badge/React-18.x-blue)](https://reactjs.org/)  
-[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green)](https://www.mongodb.com/atlas)  
-
-**Sustainify** is a **full-stack sustainable shopping platform** designed to promote **eco-friendly products, ethical brands, and responsible consumer behavior**. Built using the **MERN stack**, the platform helps users make environmentally conscious shopping decisions.
+A full-stack E-Commerce web application built with the **MERN Stack (MongoDB, Express.js, React.js, Node.js)**. The application allows users to browse products, add items to the cart, place orders, make payments, and manage their accounts securely.
 
 ---
 
-## 📑 Table of Contents
-1. [Problem Statement](#problem-statement)  
-2. [Dataset](#dataset)  
-3. [Tools and Technologies](#tools-and-technologies)  
-4. [Methods](#methods)  
-5. [Key Insights](#key-insights)  
-6. [How to Run Project](#how-to-run-project)  
-7. [Features](#features)  
-8. [Author](#author)  
-9. [Contact](#contact)
+## 🚀 Features
+
+### 👤 Authentication
+- User Sign Up
+- User Sign In
+- JWT-based authentication
+- Protected routes
+- User profile management
+
+### 🛍️ Product Management
+- Browse products
+- Product details page
+- Search and filter products
+- Category-wise products
+
+### 🛒 Shopping Cart
+- Add products to cart
+- Update product quantity
+- Remove items from cart
+- View cart summary
+- Automatic total price calculation
+
+### 💳 Payment System
+- Secure payment integration
+- Order amount calculation
+- Payment confirmation
+- Order success page
+
+### 📦 Order Management
+- Place orders using **Order Now**
+- View order history
+- Order details
+- Order status tracking
+
+### 📊 Total Values
+- Product subtotal
+- Quantity calculation
+- Tax calculation
+- Shipping charges
+- Grand total amount
 
 ---
 
-## ❗ Problem Statement
-Modern e-commerce platforms focus mainly on convenience and price, often ignoring **environmental impact and sustainability**. Users lack transparent information about eco-friendly products and ethical brands.  
-**Sustainify** aims to bridge this gap by providing a platform that highlights **sustainable products**, promotes **green shopping**, and encourages responsible consumption.
+## 🏗️ Tech Stack
+
+### Frontend
+- React.js
+- React Router DOM
+- Axios
+- Context API / Redux
+- Bootstrap / Tailwind CSS
+
+### Backend
+- Node.js
+- Express.js
+- JWT Authentication
+- REST APIs
+
+### Database
+- MongoDB
+- Mongoose
+
+### Payment Gateway
+- Stripe / Razorpay
 
 ---
 
-## 📊 Dataset
-Sustainify uses **dynamic product data** stored in **MongoDB**, including:
-- Product details (name, price, category)
-- Sustainability attributes (eco-rating, recyclable materials, carbon footprint tags)
-- Seller and brand information
-- User data, cart, and order history
+## 📂 Project Structure
+
+```
+ecommerce-app/
+│
+├── client/                 # React Frontend
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+├── server/                 # Node.js Backend
+│   ├── controllers/
+│   ├── routes/
+│   ├── models/
+│   ├── middleware/
+│   ├── config/
+│   └── server.js
+│
+├── .env
+├── package.json
+└── README.md
+```
 
 ---
 
-## 🛠️ Tools and Technologies
-- **Frontend:** React.js, HTML5, CSS3, Tailwind CSS  
-- **Backend:** Node.js, Express.js  
-- **Database:** MongoDB  
-- **Authentication:** JWT (JSON Web Tokens)  
-- **APIs:** RESTful APIs, Axios  
-- **Version Control:** Git, GitHub  
-- **Deployment (optional):** Netlify / Vercel / Render  
+## ⚙️ Installation
+
+### Clone the repository
+
+```bash
+git clone https://github.com/your-username/ecommerce-app.git
+cd ecommerce-app
+```
+
+### Install Backend Dependencies
+
+```bash
+cd server
+npm install
+```
+
+### Install Frontend Dependencies
+
+```bash
+cd ../client
+npm install
+```
 
 ---
 
-## ⚙️ Methods
-1. Users register and log in using secure authentication.  
-2. Products are fetched from MongoDB using REST APIs.  
-3. Each product displays **sustainability indicators** (eco-rating, tags).  
-4. Users can browse, filter, and add products to the cart.  
-5. Orders are processed and stored securely in the database.  
-6. Admin users can manage products, categories, and sustainability metrics.  
+## 🔑 Environment Variables
+
+Create a `.env` file inside the server directory and add:
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+STRIPE_SECRET_KEY=your_stripe_secret_key
+```
 
 ---
 
-## 📌 Key Insights
-- Highlighting sustainability data increases eco-conscious buying behavior.  
-- MERN stack ensures scalability and smooth frontend–backend communication.  
-- JWT-based authentication improves security and user trust.  
-- Categorizing products by eco-features enhances user decision-making.  
+## ▶️ Run the Application
+
+### Start Backend
+
+```bash
+cd server
+npm run dev
+```
+
+### Start Frontend
+
+```bash
+cd client
+npm start
+```
+
+The application will run at:
+
+- Frontend: `http://localhost:3000`
+- Backend: `http://localhost:5000`
 
 ---
 
-## ▶️ How to Run Project
+## API Endpoints
 
-### Prerequisites
-- Node.js & npm installed  
-- MongoDB installed or MongoDB Atlas account  
+### Authentication
 
-### Steps
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/sustainify.git
-   cd sustainify
+| Method | Endpoint | Description |
+|----------|----------|-------------|
+| POST | `/api/auth/signup` | Register user |
+| POST | `/api/auth/signin` | Login user |
+
+### Products
+
+| Method | Endpoint | Description |
+|----------|----------|-------------|
+| GET | `/api/products` | Get all products |
+| GET | `/api/products/:id` | Get product details |
+
+### Cart
+
+| Method | Endpoint | Description |
+|----------|----------|-------------|
+| POST | `/api/cart/add` | Add item to cart |
+| PUT | `/api/cart/update` | Update quantity |
+| DELETE | `/api/cart/remove/:id` | Remove item |
+
+### Orders
+
+| Method | Endpoint | Description |
+|----------|----------|-------------|
+| POST | `/api/orders` | Create order |
+| GET | `/api/orders` | Get user orders |
+
+### Payments
+
+| Method | Endpoint | Description |
+|----------|----------|-------------|
+| POST | `/api/payment/create` | Process payment |
+
+---
+
+## 🔄 Workflow
+
+1. User signs up or signs in.
+2. Browse products.
+3. Add products to the cart.
+4. Cart automatically calculates total values.
+5. Click **Order Now**.
+6. Complete payment.
+7. Order is created and saved in the database.
+8. User can view order history and status.
+
+---
+
+## 📸 Screens
+
+- Home Page
+- Product Page
+- Cart Page
+- Checkout Page
+- Payment Page
+- Order Confirmation Page
+- User Profile
+
+---
+
+## 🔒 Security
+
+- JWT Authentication
+- Password Hashing with bcrypt
+- Protected APIs
+- Environment Variables for Secrets
+
+---
+
+## Future Enhancements
+
+- Admin Dashboard
+- Product Reviews & Ratings
+- Wishlist Feature
+- Coupons & Discounts
+- Email Notifications
+- Inventory Management
+- Real-time Order Tracking
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository.
+2. Create a feature branch.
+
+```bash
+git checkout -b feature-name
+```
+
+3. Commit your changes.
+
+```bash
+git commit -m "Added new feature"
+```
+
+4. Push to GitHub.
+
+```bash
+git push origin feature-name
+```
+
+5. Open a Pull Request.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+### ⭐ If you like this project, don't forget to give it a star!
