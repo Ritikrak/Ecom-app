@@ -1,278 +1,427 @@
-# 🛒 MERN E-Commerce Application
+# 🛍️ Forever – MERN E-Commerce Platform
 
-A full-stack E-Commerce web application built with the **MERN Stack (MongoDB, Express.js, React.js, Node.js)**. The application allows users to browse products, add items to the cart, place orders, make payments, and manage their accounts securely.
+**Forever** is a full-stack e-commerce web application built using the **MERN stack — MongoDB, Express.js, React.js, and Node.js**.
 
----
+The application provides a complete online shopping experience where users can browse products, view product details, manage their shopping cart, authenticate securely, and place orders. The project also includes backend REST APIs and database integration for managing products, users, and orders.
 
-## 🚀 Features
-
-### 👤 Authentication
-- User Sign Up
-- User Sign In
-- JWT-based authentication
-- Protected routes
-- User profile management
-
-### 🛍️ Product Management
-- Browse products
-- Product details page
-- Search and filter products
-- Category-wise products
-
-### 🛒 Shopping Cart
-- Add products to cart
-- Update product quantity
-- Remove items from cart
-- View cart summary
-- Automatic total price calculation
-
-### 💳 Payment System
-- Secure payment integration
-- Order amount calculation
-- Payment confirmation
-- Order success page
-
-### 📦 Order Management
-- Place orders using **Order Now**
-- View order history
-- Order details
-- Order status tracking
-
-### 📊 Total Values
-- Product subtotal
-- Quantity calculation
-- Tax calculation
-- Shipping charges
-- Grand total amount
+The project was developed with a focus on **clean code structure, reusable React components, RESTful API design, database integration, authentication, and responsive user experience**.
 
 ---
 
-## 🏗️ Tech Stack
+## ✨ Features
 
-### Frontend
-- React.js
-- React Router DOM
-- Axios
-- Context API / Redux
-- Bootstrap / Tailwind CSS
+### 👤 User Features
 
-### Backend
-- Node.js
-- Express.js
-- JWT Authentication
-- REST APIs
+* User registration and login
+* JWT-based authentication
+* Protected routes
+* Browse products
+* View product details
+* Search products
+* Filter products
+* Add products to cart
+* Update cart quantities
+* Remove products from cart
+* Place orders
+* View order details
+* View order history
 
-### Database
-- MongoDB
-- Mongoose
+### 🛠️ Admin Features
 
-### Payment Gateway
-- Stripe / Razorpay
+* Admin authentication
+* Add products
+* Edit product details
+* Delete products
+* Manage product inventory
+* View customer orders
+* Manage order information
+
+### ⚡ Application Features
+
+* RESTful APIs
+* MongoDB database integration
+* Mongoose data modeling
+* Responsive React interface
+* Reusable React components
+* Form validation
+* API error handling
+* Loading and error states
+* Protected backend endpoints
+* Modular backend architecture
 
 ---
 
-## 📂 Project Structure
+# 🧰 Technologies Used
 
-```
-ecommerce-app/
+## Frontend
+
+* **React.js**
+* **JavaScript**
+* **HTML5**
+* **CSS3**
+* **React Router**
+* **Axios**
+
+## Backend
+
+* **Node.js**
+* **Express.js**
+* **REST APIs**
+* **JWT**
+* **bcrypt**
+
+## Database
+
+* **MongoDB**
+* **Mongoose**
+
+## Development Tools
+
+* **Kiro** – AI-assisted development
+* **Git**
+* **GitHub**
+* **Postman** – API testing
+* **VS Code**
+
+---
+
+# 🏗️ Project Structure
+
+```text
+Forever/
 │
-├── client/                 # React Frontend
+├── client/
 │   ├── src/
-│   ├── public/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── context/
+│   │   ├── services/
+│   │   ├── hooks/
+│   │   ├── utils/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
 │   └── package.json
 │
-├── server/                 # Node.js Backend
-│   ├── controllers/
-│   ├── routes/
-│   ├── models/
-│   ├── middleware/
+├── server/
 │   ├── config/
-│   └── server.js
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── utils/
+│   ├── server.js
+│   └── package.json
 │
-├── .env
-├── package.json
-└── README.md
+├── .gitignore
+├── README.md
+└── package.json
 ```
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Setup and Installation
 
-### Clone the repository
+## 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/ecommerce-app.git
-cd ecommerce-app
+git clone https://github.com/YOUR_USERNAME/forever.git
+
+cd forever
 ```
 
-### Install Backend Dependencies
+Replace `YOUR_USERNAME` with your GitHub username.
+
+---
+
+## 2. Install Backend Dependencies
 
 ```bash
 cd server
 npm install
 ```
 
-### Install Frontend Dependencies
+---
+
+## 3. Configure Environment Variables
+
+Create a `.env` file inside the `server` directory.
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+```
+
+For a local MongoDB database:
+
+```env
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/forever
+JWT_SECRET=your_secret_key
+```
+
+> **Important:** Never commit your `.env` file or other sensitive credentials to GitHub.
+
+---
+
+## 4. Install Frontend Dependencies
+
+Open a new terminal:
 
 ```bash
-cd ../client
+cd client
 npm install
 ```
 
 ---
 
-## 🔑 Environment Variables
+# ▶️ How to Run the Application
 
-Create a `.env` file inside the server directory and add:
+## Start the Backend
 
-```env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-STRIPE_SECRET_KEY=your_stripe_secret_key
-```
-
----
-
-## ▶️ Run the Application
-
-### Start Backend
+Navigate to the server directory:
 
 ```bash
 cd server
 npm run dev
 ```
 
-### Start Frontend
+The backend server will run on:
+
+```text
+http://localhost:5000
+```
+
+---
+
+## Start the Frontend
+
+Open another terminal:
 
 ```bash
 cd client
-npm start
+npm run dev
 ```
 
-The application will run at:
+The React application will run on the URL displayed by Vite, usually:
 
-- Frontend: `http://localhost:3000`
-- Backend: `http://localhost:5000`
-
----
-
-## API Endpoints
-
-### Authentication
-
-| Method | Endpoint | Description |
-|----------|----------|-------------|
-| POST | `/api/auth/signup` | Register user |
-| POST | `/api/auth/signin` | Login user |
-
-### Products
-
-| Method | Endpoint | Description |
-|----------|----------|-------------|
-| GET | `/api/products` | Get all products |
-| GET | `/api/products/:id` | Get product details |
-
-### Cart
-
-| Method | Endpoint | Description |
-|----------|----------|-------------|
-| POST | `/api/cart/add` | Add item to cart |
-| PUT | `/api/cart/update` | Update quantity |
-| DELETE | `/api/cart/remove/:id` | Remove item |
-
-### Orders
-
-| Method | Endpoint | Description |
-|----------|----------|-------------|
-| POST | `/api/orders` | Create order |
-| GET | `/api/orders` | Get user orders |
-
-### Payments
-
-| Method | Endpoint | Description |
-|----------|----------|-------------|
-| POST | `/api/payment/create` | Process payment |
-
----
-
-## 🔄 Workflow
-
-1. User signs up or signs in.
-2. Browse products.
-3. Add products to the cart.
-4. Cart automatically calculates total values.
-5. Click **Order Now**.
-6. Complete payment.
-7. Order is created and saved in the database.
-8. User can view order history and status.
-
----
-
-## 📸 Screens
-
-- Home Page
-- Product Page
-- Cart Page
-- Checkout Page
-- Payment Page
-- Order Confirmation Page
-- User Profile
-
----
-
-## 🔒 Security
-
-- JWT Authentication
-- Password Hashing with bcrypt
-- Protected APIs
-- Environment Variables for Secrets
-
----
-
-## Future Enhancements
-
-- Admin Dashboard
-- Product Reviews & Ratings
-- Wishlist Feature
-- Coupons & Discounts
-- Email Notifications
-- Inventory Management
-- Real-time Order Tracking
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome!
-
-1. Fork the repository.
-2. Create a feature branch.
-
-```bash
-git checkout -b feature-name
+```text
+http://localhost:5173
 ```
 
-3. Commit your changes.
-
-```bash
-git commit -m "Added new feature"
-```
-
-4. Push to GitHub.
-
-```bash
-git push origin feature-name
-```
-
-5. Open a Pull Request.
+Open the URL in your browser to use Forever.
 
 ---
 
-## 📄 License
+# 🔌 API Endpoints
 
-This project is licensed under the MIT License.
+The backend exposes RESTful APIs for authentication, products, and orders.
+
+## Authentication
+
+```text
+POST /api/auth/register
+POST /api/auth/login
+GET  /api/auth/me
+```
+
+## Products
+
+```text
+GET    /api/products
+GET    /api/products/:id
+POST   /api/products
+PUT    /api/products/:id
+DELETE /api/products/:id
+```
+
+## Orders
+
+```text
+POST /api/orders
+GET  /api/orders
+GET  /api/orders/:id
+```
+
+> API routes may vary depending on the final implementation of the project.
 
 ---
 
-### ⭐ If you like this project, don't forget to give it a star!
+# 🤖 AI Development Tool
+
+## Kiro
+
+**Kiro** was used as the AI-assisted development tool during the development and refinement of Forever.
+
+Kiro was used to assist with development tasks such as component development, API implementation, debugging, database integration, and code refactoring.
+
+AI-generated suggestions were **reviewed, tested, and modified manually** before being integrated into the final project.
+
+The purpose of using Kiro was to improve development efficiency while maintaining an understanding of the application's architecture and implementation.
+
+---
+
+# 🧠 AI Development Experience
+
+During the development of Forever, Kiro was used as a development assistant for specific technical tasks.
+
+The generated code and suggestions were not blindly accepted. Each implementation was reviewed, tested, and modified where necessary to match the application's requirements.
+
+### 1. React Component Development
+
+Kiro was used to assist with developing and improving reusable React components for the e-commerce interface.
+
+Examples included:
+
+* Product cards
+* Product listing components
+* Navigation components
+* Forms
+* Cart-related components
+
+The generated components were reviewed and adjusted to maintain consistency with the existing application structure.
+
+---
+
+### 2. REST API Development
+
+Kiro was used to assist in creating and improving Express.js REST APIs for the application.
+
+This included APIs related to:
+
+* User authentication
+* Product management
+* Cart operations
+* Order management
+
+The API implementation was reviewed and tested using Postman to verify request handling, responses, validation, and error cases.
+
+---
+
+### 3. MongoDB and Database Integration
+
+Kiro was used to assist with MongoDB and Mongoose integration.
+
+It helped with:
+
+* Designing Mongoose schemas
+* Structuring database models
+* Implementing database queries
+* Identifying potential validation issues
+
+The database operations were tested against the actual MongoDB database to ensure that data was correctly created, retrieved, updated, and deleted.
+
+---
+
+### 4. Debugging and Error Handling
+
+Kiro was used during debugging to analyze errors encountered during development.
+
+For example, when an API or frontend component produced unexpected behavior, the relevant code and error information were provided to Kiro for analysis.
+
+The suggested solutions were reviewed and tested manually before being applied.
+
+This helped identify issues while also requiring manual verification of whether the proposed solution actually solved the problem.
+
+---
+
+### 5. Code Refactoring
+
+Kiro was also used to review existing code and suggest improvements related to:
+
+* Code organization
+* Reusable components
+* Backend structure
+* Controller and route separation
+* Duplicate code
+* Error handling
+* Maintainability
+
+The suggestions were evaluated before implementation, and only relevant improvements were incorporated into the final codebase.
+
+---
+
+# 🔐 Security
+
+The application implements several basic security practices:
+
+* Password hashing using bcrypt
+* JWT-based authentication
+* Protected API routes
+* Authentication middleware
+* Environment variables for sensitive configuration
+* `.env` excluded from Git
+* Input validation
+* Authorization for administrative operations
+
+---
+
+# 🧪 Testing
+
+The application was tested during development using:
+
+* Browser-based testing
+* Postman API testing
+* MongoDB database verification
+* Authentication testing
+* CRUD operation testing
+* Invalid input testing
+* API error handling testing
+
+---
+
+# 📌 Development Approach
+
+The project followed an iterative development approach:
+
+```text
+Requirement
+     ↓
+Feature Development
+     ↓
+AI-Assisted Implementation
+     ↓
+Manual Code Review
+     ↓
+Testing
+     ↓
+Debugging
+     ↓
+Refactoring
+     ↓
+Final Implementation
+```
+
+Kiro was used as a development assistant throughout selected stages, while the final implementation was reviewed and tested manually.
+
+---
+
+# 🚀 Future Improvements
+
+Future versions of Forever could include:
+
+* Online payment integration
+* Product reviews and ratings
+* Wishlist functionality
+* Email notifications
+* Advanced admin analytics
+* Order tracking
+* Product recommendation system
+* Automated unit and integration testing
+* Docker support
+* Deployment with CI/CD
+
+---
+
+# 👨‍💻 Author
+
+**Your Name**
+
+GitHub: `https://github.com/Ritikrak`
+
+---
+
+# 📄 License
+
+This project was developed for educational, portfolio, and technical assessment purposes.
